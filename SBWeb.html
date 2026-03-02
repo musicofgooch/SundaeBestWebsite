@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sundae Best | Official Website</title>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+        background-color: #111;
+        color: #fff;
+        line-height: 1.6;
+    }
+
+    /* NAVIGATION */
+    header {
+        background: #000;
+        padding: 1rem 2rem;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+        font-weight: bold;
+        letter-spacing: 2px;
+    }
+
+    .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 2rem;
+    }
+
+    .nav-links a {
+        text-decoration: none;
+        color: #fff;
+        font-weight: 500;
+        transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+        color: #ff4da6;
+    }
+
+    /* HERO */
+    .hero {
+        height: 90vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0,0,0,0.3)),
+                    url('AlbumAF.PNG') center/cover no-repeat;
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+        margin-bottom: 10rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+        color: #ccc;
+    }
+
+    section {
+        padding: 4rem 2rem;
+        max-width: 1000px;
+        margin: auto;
+    }
+
+    section h2 {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+        border-bottom: 2px solid #ff4da6;
+        display: inline-block;
+        padding-bottom: 0.5rem;
+    }
+
+    /* SHOWS */
+    .show {
+        margin-bottom: 1rem;
+        padding: 1rem;
+        background: #1a1a1a;
+        border-left: 4px solid #ff4da6;
+    }
+
+    /* MUSIC */
+    .music-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+        margin-top: 2rem;
+    }   
+
+    .streaming {
+        background: #1a1a1a;
+        padding: 1rem;
+        margin-top: 1rem;
+    }
+
+    /* MERCH */
+    .merch-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+        margin-top: 2rem;
+    }
+
+    .merch-item {
+        background: #1a1a1a;
+        padding: 1rem;
+        text-align: center;
+    }
+
+    footer {
+        text-align: center;
+        padding: 2rem;
+        background: #000;
+        margin-top: 2rem;
+        font-size: 0.9rem;
+        color: #aaa;
+    }
+
+    @media (max-width: 768px) {
+        .nav-links {
+            gap: 1rem;
+        }
+
+        .hero h1 {
+            font-size: 2rem;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<header>
+    <nav>
+        <div class="logo">Sundae Best</div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#shows">Shows</a></li>
+            <li><a href="#music">Music</a></li>
+            <li><a href="#merch">Merch</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="hero">
+    <div>
+        <h1>Sundae Best</h1>
+    </div>
+</section>
+
+<section id="about">
+    <h2>About</h2>
+    <p>
+        Sundae Best is an indie fusion band blending dreamy melodies with punchy rhythms.
+        Formed in 2024, the band delivers energetic live shows and irresistible hooks.
+    </p>
+</section>
+
+<section id="shows">
+    <h2>Shows</h2>
+    <div class="show">
+        <strong>April 12, 2026</strong> — The Velvet Room, Chicago
+    </div>
+    <div class="show">
+        <strong>May 3, 2026</strong> — Sunset Stage, Nashville
+    </div>
+</section>
+
+<section id="music">
+    <h2>Music</h2>
+    <p>Stream our latest single below:</p>
+    <div class="music-grid">
+        <div class="streaming">
+            <li><a href="">Apple Music</a></li>
+        </div>
+        <div class="streaming">
+            <li><a href="">YouTube</a></li>
+        </div>
+        <div class="streaming">
+            <li><a href="https://open.spotify.com/artist/6PKrR58yG4EZNNCb6vdg8H">Spotify</a></li>
+        </div>
+    </div>
+</section>
+
+<section id="merch">
+    <h2>Merch</h2>
+    <div class="merch-grid">
+        <div class="merch-item">
+            <h3>Logo Tee</h3>
+            <p>$25</p>
+        </div>
+        <div class="merch-item">
+            <h3>Vinyl LP</h3>
+            <p>$30</p>
+        </div>
+        <div class="merch-item">
+            <h3>Sticker Pack</h3>
+            <p>$5</p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    © 2026 Sundae Best. All Rights Reserved.
+</footer>
+
+</body>
+</html>
