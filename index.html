@@ -19,11 +19,34 @@
         line-height: 1.6;
     }
 
+
+
+    .carousel {
+      position: relative;
+      width: 60vh;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      background: #000;
+    }
+
+    .carousel-track {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .carousel img {
+      width: 60vh;
+      height: 60vh;
+      object-fit: cover;
+    }
+
+
     /* NAVIGATION */
     header {
         background: #000;
         padding: 1rem 2rem;
-        position: sticky;
+        position: static;
         top: 0;
         z-index: 1000;
     }
@@ -35,9 +58,11 @@
     }
 
     .logo {
-        font-size: 1.5rem;
-        font-weight: bold;
-        letter-spacing: 2px;
+        display: flex;
+        justify-content: space-between;
+        height: 10vh;
+        padding: 0;
+
     }
 
     .nav-links {
@@ -64,8 +89,7 @@
         justify-content: center;
         align-items: center;
         text-align: center;
-        background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0,0,0,0.3)),
-                    url('AlbumAF.PNG') center/cover no-repeat;
+
     }
 
     .hero h1 {
@@ -176,7 +200,7 @@
 
 <header>
     <nav>
-        <div class="logo">Sundae Best</div>
+        <div class="logo"> <img src="IMG/logo.png" alt="Sundae Best Logo"></div>
         <ul class="nav-links">
             <li><a href="#about">About</a></li>
             <li><a href="#shows">Shows</a></li>
@@ -187,8 +211,16 @@
 </header>
 
 <section class="hero">
-    <div>
-        <h1>Sundae Best</h1>
+<div class="carousel" id="carousel">
+  <div class="carousel-track" id="track">
+    <img src="IMG/AlbumAF.PNG">
+    <img src="IMG/Photo1.jpg">
+    <img src="IMG/Photo2.jpg">
+    <img src="IMG/Photo3.jpg">
+    <img src="IMG/Photo4.jpg">
+    <img src="IMG/Photo5.jpg">
+
+</div>
     </div>
 </section>
 
@@ -248,6 +280,43 @@
         </div>
     </div>
 </section>
+
+
+
+
+<script>
+  let index = 0;
+  const track = document.getElementById('track');
+  const slides = document.querySelectorAll('.carousel img');
+  const totalSlides = slides.length;
+  const carousel = document.getElementById('carousel');
+
+  function updateSlide() {
+    track.style.transform = `translateX(-${index * 600}px)`;
+  }
+
+  function moveSlide(direction) {
+    index += direction;
+
+    if (index < 0) index = totalSlides - 1;
+    if (index >= totalSlides) index = 0;
+
+    updateSlide();
+  }
+
+  function autoSlide() {
+    index++;
+    if (index >= totalSlides) index = 0;
+    updateSlide();
+  }
+
+  let interval = setInterval(autoSlide, 4000);
+
+  if (index > 5) {
+    clearInterval(interval);
+  }
+
+</script>
 
 <footer>
     © 2026 Sundae Best. All Rights Reserved.
