@@ -4,196 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sundae Best | Official Website</title>
+<link rel="stylesheet" href="SB.css">
 
-<style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: Arial, Helvetica, sans-serif;
-    }
-
-    body {
-        background-color: #111;
-        color: #fff;
-        line-height: 1.6;
-    }
-
-
-
-    .carousel {
-      position: relative;
-      width: 60vh;
-      overflow: hidden;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-      background: #000;
-    }
-
-    .carousel-track {
-      display: flex;
-      transition: transform 0.5s ease-in-out;
-    }
-
-    .carousel img {
-      width: 60vh;
-      height: 60vh;
-      object-fit: cover;
-    }
-
-
-    /* NAVIGATION */
-    header {
-        background: #000;
-        padding: 1rem 2rem;
-        position: static;
-        top: 0;
-        z-index: 1000;
-    }
-
-    nav {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .logo {
-        display: flex;
-        justify-content: space-between;
-        height: 10vh;
-        padding: 0;
-
-    }
-
-    .nav-links {
-        list-style: none;
-        display: flex;
-        gap: 2rem;
-    }
-
-    .nav-links a {
-        text-decoration: none;
-        color: #fff;
-        font-weight: 500;
-        transition: color 0.3s ease;
-    }
-
-    .nav-links a:hover {
-        color: #ff4da6;
-    }
-
-    /* HERO */
-    .hero {
-        height: 90vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-
-    }
-
-    .hero h1 {
-        font-size: 3rem;
-        margin-bottom: 10rem;
-    }
-
-    .hero p {
-        font-size: 1.2rem;
-        color: #ccc;
-    }
-
-    section {
-        padding: 4rem 2rem;
-        max-width: 1000px;
-        margin: auto;
-    }
-
-    section h2 {
-        font-size: 2rem;
-        margin-bottom: 1.5rem;
-        border-bottom: 2px solid #ff4da6;
-        display: inline-block;
-        padding-bottom: 0.5rem;
-    }
-
-    /* SHOWS */
-    .show {
-        margin-bottom: 1rem;
-        padding: 1rem;
-        background: #1a1a1a;
-        border-left: 4px solid #ff4da6;
-    }
-
-    /* MUSIC */
-    .music-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 1rem;
-        margin-top: 2rem;
-    }   
-
-    .streaming {
-        background: #1a1a1a;
-        margin-top: 1rem;
-        list-style: none;
-    }
-
-
-    .streaming a {
-        text-decoration: none;
-        text-align: center;
-        color: #fff;
-        font-weight: 500;
-        transition: color 0.3s ease;
-        display: block;
-    }
-
-    .streaming img {
-        max-width: 100%;
-        height: auto;
-        overflow: hidden;
-        image-rendering: optimizeQuality;
-    }
-
-    .streaming a:hover {
-        color: #ff4da6;
-    }
-
-
-    /* MERCH */
-    .merch-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 1.5rem;
-        margin-top: 2rem;
-    }
-
-    .merch-item {
-        background: #1a1a1a;
-        padding: 1rem;
-        text-align: center;
-    }
-
-
-    footer {
-        text-align: center;
-        padding: 2rem;
-        background: #000;
-        margin-top: 2rem;
-        font-size: 0.9rem;
-        color: #aaa;
-    }
-
-    @media (max-width: 768px) {
-        .nav-links {
-            gap: 1rem;
-        }
-
-        .hero h1 {
-            font-size: 2rem;
-        }
-    }
-</style>
 </head>
 
 <body>
@@ -217,7 +29,7 @@
     <img src="IMG/Photo1.jpg">
     <img src="IMG/Photo2.jpg">
     <img src="IMG/Photo3.jpg">
-    <img src="IMG/Photo4.jpg">
+    <img src="IMG/Photo4.PNG">
     <img src="IMG/Photo5.jpg">
 
 </div>
@@ -283,44 +95,11 @@
 
 
 
-
-<script>
-  let index = 0;
-  const track = document.getElementById('track');
-  const slides = document.querySelectorAll('.carousel img');
-  const totalSlides = slides.length;
-  const carousel = document.getElementById('carousel');
-
-  function updateSlide() {
-    track.style.transform = `translateX(-${index * 600}px)`;
-  }
-
-  function moveSlide(direction) {
-    index += direction;
-
-    if (index < 0) index = totalSlides - 1;
-    if (index >= totalSlides) index = 0;
-
-    updateSlide();
-  }
-
-  function autoSlide() {
-    index++;
-    if (index >= totalSlides) index = 0;
-    updateSlide();
-  }
-
-  let interval = setInterval(autoSlide, 4000);
-
-  if (index > 5) {
-    clearInterval(interval);
-  }
-
-</script>
-
 <footer>
     © 2026 Sundae Best. All Rights Reserved.
 </footer>
+
+<script src="SB.js"></script>
 
 </body>
 </html>
