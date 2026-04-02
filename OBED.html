@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sundae Best | Official Website</title>
+  <meta name="description" content="Official website of Sundae Best. Explore upcoming shows, latest music releases, and band merchandise.">
+  <meta name="theme-color" content="#0f0f12">
+  <style>
+    :root {
+      --bg: #0f0f12;
+      --bg-soft: #17171c;
+      --surface: #1f1f27;
+      --text: #f5f7fb;
+      --muted: #a9b0c2;
+      --accent: #ff4da6;
+      --accent-soft: #ff7fbe;
+      --max-width: 1100px;
+      --radius: 14px;
+      --shadow: 0 14px 30px rgba(0, 0, 0, 0.35);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Inter", "Segoe UI", Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top right, rgba(255, 77, 166, 0.22), transparent 32%),
+        radial-gradient(circle at bottom left, rgba(89, 119, 255, 0.2), transparent 28%),
+        var(--bg);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(100% - 2rem, var(--max-width));
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(15, 15, 18, 0.88);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      min-height: 78px;
+    }
+
+    .logo img {
+      height: 54px;
+      width: auto;
+      display: block;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      color: var(--accent-soft);
+      outline: none;
+    }
+
+    .hero {
+      padding: 5.5rem 0 3.5rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: 1.1fr 1fr;
+      align-items: center;
+    }
+
+    .eyebrow {
+      color: var(--accent-soft);
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      font-size: 0.8rem;
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 4vw, 3.7rem);
+      line-height: 1.08;
+      margin-bottom: 1rem;
+      text-wrap: balance;
+    }
+
+    .hero p {
+      color: var(--muted);
+      max-width: 55ch;
+      margin-bottom: 1.6rem;
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      padding: 0.68rem 1.2rem;
+      font-weight: 700;
+      border: 1px solid transparent;
+      transition: transform 0.15s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+
+    .btn-primary {
+      background: linear-gradient(120deg, var(--accent), #ff6bb8);
+      color: #fff;
+      box-shadow: 0 8px 22px rgba(255, 77, 166, 0.35);
+    }
+
+    .btn-secondary {
+      border-color: rgba(255, 255, 255, 0.25);
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .btn:hover,
+    .btn:focus-visible {
+      transform: translateY(-1px);
+      outline: none;
+    }
+
+    .carousel {
+      width: 100%;
+      max-width: 510px;
+      margin: 0 auto;
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: #0a0a0a;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .carousel-track {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+      will-change: transform;
+    }
+
+    .carousel img {
+      width: 100%;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+      flex-shrink: 0;
+      display: block;
+    }
+
+    section {
+      padding: 2.5rem 0;
+    }
+
+    h2 {
+      font-size: clamp(1.5rem, 2.4vw, 2rem);
+      margin-bottom: 1rem;
+      color: #fff;
+    }
+
+    .section-intro {
+      color: var(--muted);
+      max-width: 60ch;
+      margin-bottom: 1.2rem;
+    }
+
+    .about-grid {
+      display: grid;
+      gap: 1.25rem;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      margin-top: 1rem;
+    }
+
+    .card {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius);
+      padding: 1rem;
+    }
+
+    .member-role {
+      color: var(--accent-soft);
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .shows-list {
+      display: grid;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .show {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1rem;
+      border-radius: 12px;
+      border-left: 4px solid var(--accent);
+      background: var(--bg-soft);
+    }
+
+    .show small {
+      color: var(--muted);
+    }
+
+    .music-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .platform {
+      background: var(--surface);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    .platform h3 {
+      font-size: 1rem;
+      padding: 0.9rem 1rem 0.2rem;
+    }
+
+    .platform .embed-wrap {
+      padding: 0.8rem;
+    }
+
+    .platform iframe,
+    .platform img {
+      width: 100%;
+      border: 0;
+      border-radius: 10px;
+      display: block;
+    }
+
+    .platform .yt-link {
+      display: block;
+      color: var(--muted);
+      font-weight: 600;
+      padding: 0 1rem 1rem;
+    }
+
+    .platform .yt-link:hover,
+    .platform .yt-link:focus-visible {
+      color: var(--accent-soft);
+      outline: none;
+    }
+
+    .merch-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .merch-item h3 {
+      margin-bottom: 0.5rem;
+    }
+
+    .merch-item p {
+      color: var(--muted);
+    }
+
+    .price {
+      color: #fff;
+      font-weight: 700;
+      margin-top: 0.7rem;
+      display: inline-block;
+    }
+
+    .contact-list {
+      margin-top: 1rem;
+      list-style: none;
+      display: grid;
+      gap: 0.7rem;
+      color: var(--muted);
+    }
+
+    .contact-list a {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .contact-list a:hover,
+    .contact-list a:focus-visible {
+      color: var(--accent-soft);
+      outline: none;
+    }
+
+    footer {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      color: var(--muted);
+      margin-top: 2rem;
+      padding: 1.5rem 0 2rem;
+      text-align: center;
+      font-size: 0.93rem;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .music-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .nav {
+        padding: 0.8rem 0;
+      }
+
+      .logo img {
+        height: 46px;
+      }
+
+      .nav-links {
+        gap: 0.8rem;
+        font-size: 0.9rem;
+      }
+
+      .show {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .carousel-track,
+      .btn {
+        transition: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="logo" href="#top" aria-label="Go to top">
+        <img src="IMG/logo.png" alt="Sundae Best logo" loading="eager">
+      </a>
+      <nav aria-label="Primary">
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#shows">Shows</a></li>
+          <li><a href="#music">Music</a></li>
+          <li><a href="#merch">Merch</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">Official Website</p>
+          <h1>Sundae Best</h1>
+          <p>
+            Alternative rock from Southern California. Listen to the latest release, catch upcoming shows,
+            and stay connected with everything Sundae Best.
+          </p>
+          <div class="button-row">
+            <a class="btn btn-primary" href="#music">Listen Now</a>
+            <a class="btn btn-secondary" href="#shows">View Shows</a>
+          </div>
+        </div>
+        <div class="carousel" id="carousel" aria-label="Band photo gallery">
+          <div class="carousel-track" id="track">
+            <img src="IMG/AlbumAF.PNG" alt="Assorted Flavors album cover" loading="eager">
+            <img src="IMG/Photo1.jpg" alt="Sundae Best promotional photo 1" loading="lazy">
+            <img src="IMG/Photo2.jpg" alt="Sundae Best promotional photo 2" loading="lazy">
+            <img src="IMG/Photo3.jpg" alt="Sundae Best promotional photo 3" loading="lazy">
+            <img src="IMG/Photo4.jpg" alt="Sundae Best promotional photo 4" loading="lazy">
+            <img src="IMG/Photo5.jpg" alt="Sundae Best promotional photo 5" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <h2>About</h2>
+        <p class="section-intro">
+          Sundae Best started as a shared vision among friends working the same day job and pushing for more.
+          The sound blends melodic hooks with raw live energy.
+        </p>
+        <div class="about-grid">
+          <article class="card">
+            <p class="member-role">Guitar / Vocals</p>
+            <h3>Andrew Gooch</h3>
+          </article>
+          <article class="card">
+            <p class="member-role">Bass / Vocals</p>
+            <h3>Aidan Alcala</h3>
+          </article>
+          <article class="card">
+            <p class="member-role">Drums</p>
+            <h3>Julian Jackson</h3>
+          </article>
+          <article class="card">
+            <p class="member-role">Guitar</p>
+            <h3>Matthew Jackson</h3>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="shows">
+      <div class="container">
+        <h2>Shows</h2>
+        <p class="section-intro">Upcoming live dates. Follow socials for announcements and ticket updates.</p>
+        <div class="shows-list">
+          <article class="show">
+            <div>
+              <strong>March 14, 2026</strong><br>
+              <small>Art Alley, Los Angeles, CA</small>
+            </div>
+            <a class="btn btn-secondary" href="#contact">Event Info</a>
+          </article>
+          <article class="show">
+            <div>
+              <strong>April 25, 2026</strong><br>
+              <small>The Wild Goose, Victorville, CA</small>
+            </div>
+            <a class="btn btn-secondary" href="#contact">Event Info</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="music">
+      <div class="container">
+        <h2>Music</h2>
+        <p class="section-intro">Stream the latest release on your favorite platform.</p>
+        <div class="music-grid">
+          <article class="platform">
+            <h3>YouTube</h3>
+            <div class="embed-wrap">
+              <a href="https://www.youtube.com/@SundaeBestBand" target="_blank" rel="noopener noreferrer">
+                <img src="https://img.youtube.com/vi/ENrIGJhFksY/maxresdefault.jpg" alt="Sundae Best on YouTube" loading="lazy">
+              </a>
+            </div>
+            <a class="yt-link" href="https://www.youtube.com/@SundaeBestBand" target="_blank" rel="noopener noreferrer">Visit Channel</a>
+          </article>
+
+          <article class="platform">
+            <h3>Apple Music</h3>
+            <div class="embed-wrap">
+              <iframe
+                allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write"
+                height="450"
+                sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
+                src="https://embed.music.apple.com/us/album/assorted-flavors/1847141322"
+                loading="lazy"
+                title="Sundae Best on Apple Music">
+              </iframe>
+            </div>
+          </article>
+
+          <article class="platform">
+            <h3>Spotify</h3>
+            <div class="embed-wrap">
+              <iframe
+                src="https://open.spotify.com/embed/artist/6PKrR58yG4EZNNCb6vdg8H?utm_source=generator"
+                height="450"
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy"
+                title="Sundae Best on Spotify">
+              </iframe>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="merch">
+      <div class="container">
+        <h2>Merch</h2>
+        <p class="section-intro">Limited items available at shows and through direct inquiries.</p>
+        <div class="merch-grid">
+          <article class="card merch-item">
+            <h3>Embroidered Tee</h3>
+            <p>Heavyweight cotton with stitched front logo.</p>
+            <span class="price">$25</span>
+          </article>
+          <article class="card merch-item">
+            <h3>Assorted Flavors Vinyl</h3>
+            <p>Debut release on collectible pressing.</p>
+            <span class="price">$30</span>
+          </article>
+          <article class="card merch-item">
+            <h3>Sticker Pack</h3>
+            <p>Durable outdoor-grade stickers.</p>
+            <span class="price">$5</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <h2>Contact</h2>
+        <p class="section-intro">For booking, press, collaborations, and merch inquiries.</p>
+        <ul class="contact-list">
+          <li>Email: <a href="mailto:sundaebestband@gmail.com">sundaebestband@gmail.com</a></li>
+          <li>YouTube: <a href="https://www.youtube.com/@SundaeBestBand" target="_blank" rel="noopener noreferrer">@SundaeBestBand</a></li>
+          <li>Instagram: <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Add official profile link</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; <span id="year"></span> Sundae Best. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      const track = document.getElementById("track");
+      const carousel = document.getElementById("carousel");
+      const slides = track ? track.querySelectorAll("img") : [];
+      let index = 0;
+      let intervalId;
+
+      function updateSlide() {
+        if (!track || slides.length === 0) {
+          return;
+        }
+        const slideWidth = carousel.clientWidth;
+        track.style.transform = "translateX(-" + index * slideWidth + "px)";
+      }
+
+      function nextSlide() {
+        if (slides.length === 0) {
+          return;
+        }
+        index = (index + 1) % slides.length;
+        updateSlide();
+      }
+
+      function startAutoSlide() {
+        stopAutoSlide();
+        intervalId = window.setInterval(nextSlide, 4200);
+      }
+
+      function stopAutoSlide() {
+        if (intervalId) {
+          window.clearInterval(intervalId);
+        }
+      }
+
+      window.addEventListener("resize", updateSlide);
+      if (carousel) {
+        carousel.addEventListener("mouseenter", stopAutoSlide);
+        carousel.addEventListener("mouseleave", startAutoSlide);
+      }
+
+      updateSlide();
+      startAutoSlide();
+      const year = document.getElementById("year");
+      if (year) {
+        year.textContent = String(new Date().getFullYear());
+      }
+    })();
+  </script>
+</body>
+</html>
